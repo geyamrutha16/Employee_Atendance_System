@@ -159,9 +159,15 @@ npm install && npm run build
 Publish Directory:
 
 dist
+
 📸 Screenshots
+
 🔐 Login Page
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/b506e615-ebf4-4d4e-9118-9fd3ca17eac0" />
+
 👨‍💼 Employee Dashboard
+<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/ce81e307-1ebb-4d2a-b2ca-fbcd18768b8e" />
+
 🧑‍💼 Manager Dashboard
 📅 Team Calendar View
 📝 API Endpoints Overview
