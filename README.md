@@ -3,41 +3,63 @@
 A complete MERN-based attendance tracking system with separate Employee and Manager dashboards.
 
 🚀 Features
-
 👨‍💼 Employee
 
 Register & Login
+
 Mark Attendance (Check-In / Check-Out)
+
 Daily status tracking
+
 Monthly summary (Present/Absent/Late/Hours)
+
 Attendance history (table + calendar)
+
 Profile page
+
 Interactive dashboard
 
 🧑‍💼 Manager
 
 Login
+
 Dashboard with team stats
+
 View all employees attendance
+
 Filters: date, employee, status
+
 Department summary
+
 Attendance trend chart
+
 Export CSV Reports
+
 Team Calendar View (day wise details)
 
-[🏗️ Tech Stack
-
+🏗️ Tech Stack
 Frontend
+
 React
+
 Redux Toolkit
+
 Vite
+
 MUI
+
 FullCalendar
+
 Backend
+
 Node.js
+
 Express.js
+
 MongoDB (Mongoose ORM)
+
 JWT Authentication
+
 bcrypt
 
 📂 Project Structure
@@ -56,7 +78,7 @@ attendance-app/
     ├── src/
     ├── components/
     ├── pages/
-    └── vite.config.js](https://github.com/geyamrutha16)
+    └── vite.config.js
 
 ⚙️ Setup Instructions (Local)
 1️⃣ Clone Repository
@@ -137,7 +159,6 @@ npm install && npm run build
 Publish Directory:
 
 dist
-
 📸 Screenshots
 🔐 Login Page
 👨‍💼 Employee Dashboard
