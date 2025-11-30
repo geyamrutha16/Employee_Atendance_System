@@ -25,7 +25,7 @@ Attendance trend chart
 Export CSV Reports
 Team Calendar View (day wise details)
 
-🏗️ Tech Stack
+[🏗️ Tech Stack
 
 Frontend
 React
@@ -56,7 +56,7 @@ attendance-app/
     ├── src/
     ├── components/
     ├── pages/
-    └── vite.config.js
+    └── vite.config.js](https://github.com/geyamrutha16)
 
 ⚙️ Setup Instructions (Local)
 1️⃣ Clone Repository
