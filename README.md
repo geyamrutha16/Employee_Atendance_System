@@ -3,63 +3,41 @@
 A complete MERN-based attendance tracking system with separate Employee and Manager dashboards.
 
 🚀 Features
+
 👨‍💼 Employee
 
 Register & Login
-
 Mark Attendance (Check-In / Check-Out)
-
 Daily status tracking
-
 Monthly summary (Present/Absent/Late/Hours)
-
 Attendance history (table + calendar)
-
 Profile page
-
 Interactive dashboard
 
 🧑‍💼 Manager
 
 Login
-
 Dashboard with team stats
-
 View all employees attendance
-
 Filters: date, employee, status
-
 Department summary
-
 Attendance trend chart
-
 Export CSV Reports
-
 Team Calendar View (day wise details)
 
 🏗️ Tech Stack
+
 Frontend
-
 React
-
 Redux Toolkit
-
 Vite
-
 MUI
-
 FullCalendar
-
 Backend
-
 Node.js
-
 Express.js
-
 MongoDB (Mongoose ORM)
-
 JWT Authentication
-
 bcrypt
 
 📂 Project Structure
