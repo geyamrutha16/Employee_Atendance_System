@@ -9,7 +9,7 @@ dotenv.config();
 
 const allowedOrigins = [
     "http://localhost:5173",                  // local frontend (Vite)
-    process.env.CORS_ORIGIN,                  // Render frontend URL
+    "https://atendance-system-frontend.onrender.com",    // Render frontend URL
 ];
 
 app.use(
