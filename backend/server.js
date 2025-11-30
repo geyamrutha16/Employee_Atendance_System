@@ -9,7 +9,6 @@ dotenv.config();
 
 const allowedOrigins = [
     "http://localhost:5173",                  // local frontend (Vite)
-    "http://localhost:3000",                  // optional
     process.env.CORS_ORIGIN,                  // Render frontend URL
 ];
 

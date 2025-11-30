@@ -41,7 +41,6 @@ const seed = async () => {
     const createdUsers = await User.insertMany(users);
     console.log('Users created successfully');
 
-    // Sample attendance for last 7 days for Alice (EMP001)
     const alice = createdUsers.find(u => u.employeeId === 'EMP001');
 
     const attendanceRecords = [];

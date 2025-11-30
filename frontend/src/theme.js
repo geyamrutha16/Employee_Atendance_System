@@ -1,4 +1,3 @@
-// src/theme.js
 export const getDesignTokens = (mode) => ({
     palette: {
         mode,

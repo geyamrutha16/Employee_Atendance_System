@@ -1,4 +1,3 @@
-// src/ThemeContext.jsx
 import React, { createContext, useMemo, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { getDesignTokens } from "./theme";

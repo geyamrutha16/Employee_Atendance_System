@@ -21,19 +21,16 @@ export default function EmployeeDashboard() {
   const summary = useSelector((s) => s.attendance.summary);
   const records = useSelector((s) => s.attendance.records);
 
-  // ✔ Added state for monthly summary filter
   const [month, setMonth] = useState("");
 
-  // Load initial data
   useEffect(() => {
     dispatch(fetchSummary());
     dispatch(fetchHistory());
   }, []);
 
-  // ✔ Fetch monthly summary when month is changed
   useEffect(() => {
-    if (month === "") return; // show default summary
-    dispatch(fetchSummary(month)); // fetch monthly summary
+    if (month === "") return;
+    dispatch(fetchSummary(month));
   }, [month]);
 
   const cards = [
@@ -65,7 +62,6 @@ export default function EmployeeDashboard() {
 
   return (
     <Container sx={{ mt: 4 }}>
-      {/* HERO SECTION */}
       <Paper
         elevation={4}
         sx={{
@@ -87,7 +83,6 @@ export default function EmployeeDashboard() {
         </Typography>
       </Paper>
 
-      {/* MONTH PICKER — ADDED FEATURE */}
       <Paper
         elevation={4}
         sx={{
@@ -111,7 +106,6 @@ export default function EmployeeDashboard() {
         />
       </Paper>
 
-      {/* STATISTICS CARDS */}
       <Grid container spacing={3}>
         {cards.map((card, index) => (
           <Grid item xs={12} sm={6} md={3} key={card.label}>
@@ -153,7 +147,6 @@ export default function EmployeeDashboard() {
         ))}
       </Grid>
 
-      {/* RECENT ATTENDANCE */}
       <Grid item xs={12} sx={{ mt: 4 }}>
         <Paper elevation={4} sx={{ p: 3, borderRadius: 3 }}>
           <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>
@@ -177,7 +170,6 @@ export default function EmployeeDashboard() {
                   alignItems: "center",
                 }}
               >
-                {/* LEFT: Avatar + Date */}
                 <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                   <Avatar
                     sx={{
@@ -199,7 +191,6 @@ export default function EmployeeDashboard() {
                   <Typography fontWeight={600}>{r.date}</Typography>
                 </Box>
 
-                {/* STATUS CHIP */}
                 <Chip
                   label={r.status.toUpperCase()}
                   color={
@@ -212,7 +203,6 @@ export default function EmployeeDashboard() {
                   variant="filled"
                 />
 
-                {/* HOURS */}
                 <Typography>{r.totalHours || 0} hrs</Typography>
               </Box>
             </motion.div>

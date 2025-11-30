@@ -15,7 +15,6 @@ import toast, { Toaster } from "react-hot-toast";
 export default function MarkAttendance() {
   const dispatch = useDispatch();
 
-  // FIX: SEPARATE loading states
   const [loadingIn, setLoadingIn] = useState(false);
   const [loadingOut, setLoadingOut] = useState(false);
 
@@ -23,7 +22,6 @@ export default function MarkAttendance() {
 
   const extractMessage = (msg) => msg?.toString() || "Something went wrong";
 
-  // CHECK IN ---------------------------------------------------
   const handleCheckIn = async () => {
     setLoadingIn(true);
     try {
@@ -41,7 +39,6 @@ export default function MarkAttendance() {
     setLoadingIn(false);
   };
 
-  // CHECK OUT ---------------------------------------------------
   const handleCheckOut = async () => {
     setLoadingOut(true);
     try {
@@ -147,7 +144,6 @@ export default function MarkAttendance() {
                 </Button>
               </motion.div>
 
-              {/* CHECK OUT */}
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Button
                   fullWidth

@@ -1,4 +1,3 @@
-// src/components/NavBar.jsx
 import React, { useContext, useState } from "react";
 import {
   AppBar,
@@ -33,9 +32,6 @@ export default function NavBar() {
   const dispatch = useDispatch();
   const nav = useNavigate();
 
-  // -----------------------------------------
-  // UPDATED MENU ITEMS (Manager menu included)
-  // -----------------------------------------
   const menuItems = [
     { label: "Dashboard", link: "/" },
     { label: "Mark Attendance", link: "/mark" },
@@ -67,12 +63,10 @@ export default function NavBar() {
             px: "15px !important",
           }}
         >
-          {/* LOGO */}
           <Typography variant="h6" sx={{ fontWeight: 600, fontSize: "1.1rem" }}>
             Attendance
           </Typography>
 
-          {/* DESKTOP MENU */}
           {!isMobile ? (
             <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
               {menuItems.map((item) => (
@@ -91,7 +85,6 @@ export default function NavBar() {
                 </Button>
               ))}
 
-              {/* Theme Toggle */}
               <IconButton
                 onClick={() => colorMode.toggleColorMode()}
                 sx={{ color: "white", p: "6px" }}
@@ -103,7 +96,6 @@ export default function NavBar() {
                 )}
               </IconButton>
 
-              {/* Authentication */}
               {auth.user ? (
                 <Button
                   color="inherit"
@@ -138,7 +130,6 @@ export default function NavBar() {
               )}
             </Box>
           ) : (
-            /* MOBILE MENU ICON */
             <IconButton
               color="inherit"
               onClick={() => setOpen(true)}
@@ -150,7 +141,6 @@ export default function NavBar() {
         </Toolbar>
       </AppBar>
 
-      {/* ---------------- MOBILE DRAWER ---------------- */}
       <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
         <Box sx={{ width: "70vw", p: 2 }}>
           <Typography variant="h6" sx={{ mb: 2 }}>
@@ -169,7 +159,6 @@ export default function NavBar() {
               </ListItemButton>
             ))}
 
-            {/* Toggle Theme */}
             <ListItemButton
               onClick={() => {
                 colorMode.toggleColorMode();
@@ -179,7 +168,6 @@ export default function NavBar() {
               <ListItemText primary="Toggle Theme" />
             </ListItemButton>
 
-            {/* AUTH BUTTONS */}
             {auth.user ? (
               <ListItemButton
                 onClick={() => {

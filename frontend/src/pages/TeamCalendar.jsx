@@ -1,4 +1,3 @@
-// src/pages/TeamCalendar.jsx
 import React, { useEffect, useState } from "react";
 import {
   Container,
@@ -26,7 +25,6 @@ export default function TeamCalendar() {
   const [selectedDayRecords, setSelectedDayRecords] = useState([]);
   const [openModal, setOpenModal] = useState(false);
 
-  // ------------------ LOAD MONTH SUMMARY ------------------
   const loadMonthSummary = async (monthStr) => {
     try {
       const res = await API.get("/attendance/calendar-summary", {
@@ -54,7 +52,6 @@ export default function TeamCalendar() {
     }
   };
 
-  // ------------------ WHEN MONTH CHANGES IN CALENDAR ------------------
   const handleMonthChange = (info) => {
     const year = info.view.currentStart.getFullYear();
     const month = String(info.view.currentStart.getMonth() + 1).padStart(
@@ -66,7 +63,6 @@ export default function TeamCalendar() {
     loadMonthSummary(monthStr);
   };
 
-  // ------------------ DAY CLICK = SHOW EMPLOYEE RECORDS ------------------
   const handleDateClick = async (info) => {
     try {
       const res = await API.get(`/attendance/by-date/${info.dateStr}`);
@@ -81,7 +77,6 @@ export default function TeamCalendar() {
 
   return (
     <Container sx={{ mt: 4 }}>
-      {/* ------------------ HEADER ------------------ */}
       <Paper
         elevation={4}
         sx={{
@@ -103,7 +98,6 @@ export default function TeamCalendar() {
         </Typography>
       </Paper>
 
-      {/* ------------------ CALENDAR ------------------ */}
       <Paper elevation={4} sx={{ p: 2, borderRadius: 3 }}>
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
@@ -115,7 +109,6 @@ export default function TeamCalendar() {
         />
       </Paper>
 
-      {/* ------------------ MODAL ------------------ */}
       <Dialog
         open={openModal}
         onClose={() => setOpenModal(false)}

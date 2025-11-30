@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async (uri) => {
     try {
-        await mongoose.connect(uri);  // no options needed in Mongoose >= 7
+        await mongoose.connect(uri);
         console.log("MongoDB connected");
     } catch (err) {
         console.error("Mongo Error:", err.message);

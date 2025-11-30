@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import API from "../../api/axiosInstance";
 
-// CHECK IN
 export const checkIn = createAsyncThunk(
     "attendance/checkIn",
     async (_, { rejectWithValue }) => {
@@ -16,7 +15,6 @@ export const checkIn = createAsyncThunk(
     }
 );
 
-// CHECK OUT
 export const checkOut = createAsyncThunk(
     "attendance/checkOut",
     async (_, { rejectWithValue }) => {
@@ -31,7 +29,6 @@ export const checkOut = createAsyncThunk(
     }
 );
 
-// HISTORY
 export const fetchHistory = createAsyncThunk(
     "attendance/fetchHistory",
     async (_, { rejectWithValue }) => {
@@ -44,7 +41,6 @@ export const fetchHistory = createAsyncThunk(
     }
 );
 
-// SUMMARY
 export const fetchSummary = createAsyncThunk(
     "attendance/fetchSummary",
     async (month, { rejectWithValue }) => {

@@ -3,7 +3,6 @@ const Attendance = require("../models/Attendance");
 
 const today = () => new Date().toISOString().slice(0, 10);
 
-// ----------- GET /api/dashboard/stats -----------
 exports.getStats = async (req, res) => {
     try {
         const { month } = req.query; // YYYY-MM
@@ -38,13 +37,10 @@ exports.getStats = async (req, res) => {
     }
 };
 
-
-// ----------- GET /api/dashboard/monthly-trend -----------
 exports.getMonthlyTrend = async (req, res) => {
     try {
         const { month } = req.query;
 
-        // fallback current month
         let monthRegex;
         if (month) monthRegex = new RegExp(`^${month}`);
         else {
@@ -71,8 +67,6 @@ exports.getMonthlyTrend = async (req, res) => {
     }
 };
 
-
-// ----------- GET /api/dashboard/department-summary -----------
 exports.getDepartmentSummary = async (req, res) => {
     try {
         const { month } = req.query;
@@ -83,7 +77,7 @@ exports.getDepartmentSummary = async (req, res) => {
 
         const monthFilter = month
             ? new RegExp(`^${month}`)
-            : today(); // default today
+            : today();
 
         for (const user of users) {
             const dept = user.department || "General";

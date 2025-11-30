@@ -1,4 +1,3 @@
-// src/pages/ManagerDashboard.jsx
 import React, { useEffect, useState, useCallback } from "react";
 import {
   Container,
@@ -41,7 +40,6 @@ const icons = {
   absent: "🟥",
 };
 
-// ------------------ DEBOUNCE ------------------
 function useDebounce(callback, delay) {
   const fn = useCallback(() => {
     clearTimeout(fn.timer);
@@ -62,10 +60,8 @@ export default function ManagerDashboard() {
     status: "",
   });
 
-  // ------------------ MONTH SUMMARY FILTER ------------------
   const [month, setMonth] = useState("");
 
-  // ------------------ EXPORT CSV ------------------
   const handleExport = async () => {
     try {
       const res = await API.get("/attendance/export", { responseType: "blob" });
@@ -81,7 +77,6 @@ export default function ManagerDashboard() {
     }
   };
 
-  // ------------------ API LOADERS ------------------
   const loadStats = async () => {
     try {
       const url = month
@@ -144,13 +139,11 @@ export default function ManagerDashboard() {
     }
   };
 
-  // Auto-refresh on filter change (debounced)
   const debouncedFilter = useDebounce(loadAll, 300);
   useEffect(() => {
     debouncedFilter();
   }, [filter]);
 
-  // Load everything on mount
   useEffect(() => {
     loadStats();
     loadTrend();
@@ -158,14 +151,12 @@ export default function ManagerDashboard() {
     loadAll();
   }, []);
 
-  // Reload summary when month changes
   useEffect(() => {
     loadStats();
     loadTrend();
     loadDepartments();
   }, [month]);
 
-  // ------------------ KPI CARDS ------------------
   const cardItems = [
     {
       label: "Total Employees",
@@ -195,7 +186,6 @@ export default function ManagerDashboard() {
 
   return (
     <Container sx={{ mt: 4 }}>
-      {/* ----------------- HERO BANNER ----------------- */}
       <Paper
         elevation={4}
         sx={{
@@ -217,7 +207,6 @@ export default function ManagerDashboard() {
         </Typography>
       </Paper>
 
-      {/* ----------------- MONTH PICKER ----------------- */}
       <Paper
         elevation={4}
         sx={{
@@ -241,7 +230,6 @@ export default function ManagerDashboard() {
         />
       </Paper>
 
-      {/* ----------------- KPI CARDS ----------------- */}
       <Grid container spacing={3} sx={{ mb: 4 }}>
         {cardItems.map((card, i) => (
           <Grid item xs={12} sm={6} md={3} key={i}>
@@ -268,7 +256,6 @@ export default function ManagerDashboard() {
         ))}
       </Grid>
 
-      {/* ----------------- CHARTS ----------------- */}
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <Paper elevation={4} sx={{ p: 2, height: 350 }}>
@@ -308,7 +295,6 @@ export default function ManagerDashboard() {
         </Grid>
       </Grid>
 
-      {/* ----------------- FILTERS ----------------- */}
       <Paper
         elevation={4}
         sx={{
@@ -372,7 +358,6 @@ export default function ManagerDashboard() {
         </Grid>
       </Paper>
 
-      {/* ----------------- TABLE + EXPORT BUTTON ----------------- */}
       <Paper elevation={4} sx={{ p: 3, mt: 4 }}>
         <Box
           sx={{

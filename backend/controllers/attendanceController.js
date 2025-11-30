@@ -23,7 +23,7 @@ exports.checkIn = async (req, res) => {
             record.checkInTime = now;
         }
 
-        // mark late if check-in after 09:30 (example)
+        // marking late if check-in after 09:30 (for example)
         const cutoff = new Date();
         cutoff.setHours(9, 30, 0, 0);
         record.status = (now > cutoff) ? 'late' : 'present';
@@ -69,7 +69,7 @@ exports.mySummary = async (req, res) => {
         const user = req.user;
         const { month } = req.query; // 'YYYY-MM'
         const match = { userId: user._id };
-        if (month) match.date = new RegExp(`^${month}`); // quick filter
+        if (month) match.date = new RegExp(`^${month}`);
         const records = await Attendance.find(match);
         const summary = { present: 0, absent: 0, late: 0, halfDay: 0, totalHours: 0 };
         records.forEach(r => {
