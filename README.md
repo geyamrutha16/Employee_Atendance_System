@@ -1,115 +1,93 @@
-📌 Employee Attendance System
+🌟 Employee Attendance System — MERN Stack
 
-A complete MERN-based attendance tracking system with separate Employee and Manager dashboards.
+A fully featured Employee & Manager Attendance Management System built using the MERN stack, offering secure authentication, role-based dashboards, calendar views, attendance analytics, and CSV reporting.
 
 🚀 Features
-👨‍💼 Employee
 
-Register & Login
+👨‍💼 Employee Features
+🔐 Register & Login
+🕒 Mark Attendance (Check-In / Check-Out)
+📅 Daily + Monthly Summary
+📘 Attendance History (Table + Calendar)
+👤 Profile Page
+📊 Interactive Dashboard
 
-Mark Attendance (Check-In / Check-Out)
+🧑‍💼 Manager Features
 
-Daily status tracking
-
-Monthly summary (Present/Absent/Late/Hours)
-
-Attendance history (table + calendar)
-
-Profile page
-
-Interactive dashboard
-
-🧑‍💼 Manager
-
-Login
-
-Dashboard with team stats
-
-View all employees attendance
-
-Filters: date, employee, status
-
-Department summary
-
-Attendance trend chart
-
-Export CSV Reports
-
-Team Calendar View (day wise details)
+🔐 Manager Login
+📊 Dashboard with Team Statistics
+👥 View All Employees Attendance
+🔍 Filters: Date, Employee ID, Status
+🏢 Department-wise Summary Chart
+📈 Attendance Trend Line Graph
+📅 Team Calendar View (Day-wise detailed attendance)
+📤 Export Attendance Reports (CSV)
 
 🏗️ Tech Stack
-Frontend
 
-React
+🎨 Frontend
 
-Redux Toolkit
+⚛️ React
+🧰 Redux Toolkit
+⚡ Vite
+🎨 Material UI (MUI)
+📅 FullCalendar
 
-Vite
+🖥️ Backend
 
-MUI
-
-FullCalendar
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB (Mongoose ORM)
-
-JWT Authentication
-
-bcrypt
+🟢 Node.js
+🚏 Express.js
+🍃 MongoDB + Mongoose
+🔑 JWT Authentication
+🔐 bcrypt.js
 
 📂 Project Structure
 attendance-app/
 │
 ├── backend/
+│   ├── config/
 │   ├── controllers/
+│   ├── middleware/
 │   ├── models/
 │   ├── routes/
-│   ├── middleware/
-│   ├── config/
 │   ├── seed/
 │   └── server.js
 │
 └── frontend/
     ├── src/
-    ├── components/
     ├── pages/
+    ├── components/
     └── vite.config.js
 
-⚙️ Setup Instructions (Local)
-1️⃣ Clone Repository
+⚙️ Setup Instructions (Local Development)
+1️⃣ Clone the Repository
 git clone https://github.com/yourusername/attendance-app.git
 cd attendance-app
 
 🗄️ Backend Setup
-2️⃣ Go to backend
+2️⃣ Navigate to backend
 cd backend
 
 3️⃣ Install dependencies
 npm install
 
-4️⃣ Create .env file
+4️⃣ Create .env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 CORS_ORIGIN=http://localhost:5173
 
-5️⃣ Seed sample data (Optional)
+5️⃣ (Optional) Seed sample users & attendance
 node seed/seed.js
 
-6️⃣ Start server
+6️⃣ Start backend server
 npm start
 
 
-Backend running at:
-👉 http://localhost:5000
+Backend runs at → http://localhost:5000
 
 🎨 Frontend Setup
-7️⃣ Go to frontend
+7️⃣ Navigate to frontend
 cd ../frontend
 
 8️⃣ Install dependencies
@@ -119,92 +97,63 @@ npm install
 npm run dev
 
 
-Frontend running at:
-👉 http://localhost:5173
+Frontend runs at → http://localhost:5173
 
 🌍 Environment Variables
-
-Create .env inside backend:
-
+🔧 Backend .env
 PORT=5000
 MONGO_URI=your_mongodb_url
 JWT_SECRET=long_random_secret
 CORS_ORIGIN=http://localhost:5173
 
-
-For frontend, create .env:
-
+🎨 Frontend .env
 VITE_API_URL=https://your-backend-url.onrender.com/api
-
-🚀 Deployment Guide
-⭐ Backend (Render – Web Service)
-
-Root Directory: ./backend
-
-Build Command: npm install
-
-Start Command: node server.js
-
-Environment Variables: (same as local)
-
-⭐ Frontend (Render – Static Site)
-
-Root Directory: ./frontend
-
-Build Command:
-
-npm install && npm run build
-
-
-Publish Directory:
-
-dist
 
 📸 Screenshots
 
 🔐 Login Page
-<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/b506e615-ebf4-4d4e-9118-9fd3ca17eac0" />
-
+<img width="960" src="https://github.com/user-attachments/assets/b506e615-ebf4-4d4e-9118-9fd3ca17eac0">
 👨‍💼 Employee Dashboard
-<img width="960" height="540" alt="image" src="https://github.com/user-attachments/assets/ce81e307-1ebb-4d2a-b2ca-fbcd18768b8e" />
+<img width="960" src="https://github.com/user-attachments/assets/ce81e307-1ebb-4d2a-b2ca-fbcd18768b8e">
+🧑‍💼 Manager Dashboard (Add screenshot)
+📅 Team Calendar View (Add screenshot)
 
-🧑‍💼 Manager Dashboard
-📅 Team Calendar View
 📝 API Endpoints Overview
 
-Auth
+🔐 AUTH
 Method	Endpoint	Description
-POST	/api/auth/register	Register user
+POST	/api/auth/register	Register User
 POST	/api/auth/login	Login
-GET	/api/auth/me	Get logged-in user
-Employee Attendance
+GET	/api/auth/me	Get Logged-in User
+
+👨‍💼 Employee Attendance
 Method	Endpoint	Description
 POST	/api/attendance/checkin	Check In
 POST	/api/attendance/checkout	Check Out
-GET	/api/attendance/my-history	History
-GET	/api/attendance/my-summary	Monthly summary
-Manager Attendance
+GET	/api/attendance/my-history	My Attendance History
+GET	/api/attendance/my-summary	Monthly Summary
 
-| GET | /api/attendance/all | All employees |
-| GET | /api/attendance/export | Download CSV |
-| GET | /api/attendance/by-date/:date | Day-wise detail |
-| GET | /api/attendance/calendar-summary | Monthly calendar view |
+🧑‍💼 Manager Attendance
+Method	Endpoint	Description
+GET	/api/attendance/all	All Employees Attendance
+GET	/api/attendance/export	Export CSV
+GET	/api/attendance/by-date/:date	Attendance by Date
+GET	/api/attendance/calendar-summary	Month Summary
 
-🧪 Seed Data Info
+🔧 Seed Data Info
 
-Users created:
-
-6 employees (EMP001–EMP007)
-
-3 managers
-
-7 days sample attendance
+👥 6 Employees (EMP001–EMP007)
+🧑‍💼 3 Managers
+🗓️ 7 days sample attendance
 
 🙌 Author
 
 POLURU GEYAMRUTHA
 Full-stack Developer
-📧 geyamruthapoluru@gmail.com
-https://geyamrutha-lookbook.onrender.com/
-https://www.linkedin.com/in/geyamrutha-poluru/
-https://github.com/geyamrutha16
+📧 Email: geyamruthapoluru@gmail.com
+
+🌐 Portfolio: https://geyamrutha-lookbook.onrender.com
+
+🔗 LinkedIn: https://www.linkedin.com/in/geyamrutha-poluru
+
+💻 GitHub: https://github.com/geyamrutha16
