@@ -1,13 +1,19 @@
+// src/main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
+import { Provider as ReduxProvider } from "react-redux";
 import store from "./app/store";
 import App from "./App";
-import { CssBaseline } from "@mui/material";
+import ThemeContextProvider from "./ThemeContext";
+import CssBaseline from "@mui/material/CssBaseline";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <CssBaseline />
-    <App />
-  </Provider>
+  <React.StrictMode>
+    <ThemeContextProvider>
+      <ReduxProvider store={store}>
+        <CssBaseline />
+        <App />
+      </ReduxProvider>
+    </ThemeContextProvider>
+  </React.StrictMode>
 );

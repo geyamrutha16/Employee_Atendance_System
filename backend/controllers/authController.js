@@ -48,3 +48,23 @@ exports.login = async (req, res) => {
 exports.me = async (req, res) => {
     res.json(req.user);
 };
+
+exports.updateProfile = async (req, res) => {
+    try {
+        const user = req.user;
+        const updates = req.body;
+
+        if (updates.password) {
+            updates.password = await bcrypt.hash(updates.password, 10);
+        }
+
+        const updatedUser = await User.findByIdAndUpdate(user._id, updates, {
+            new: true,
+        });
+
+        res.json(updatedUser);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+

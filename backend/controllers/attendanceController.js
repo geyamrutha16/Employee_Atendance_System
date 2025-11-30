@@ -13,6 +13,7 @@ exports.checkIn = async (req, res) => {
         const date = formatDate(new Date());
         const now = new Date();
 
+        console.log('Check-in attempt for user:', user.email, 'on date:', date);
         let record = await Attendance.findOne({ userId: user._id, date });
         if (record && record.checkInTime) return res.status(400).json({ message: 'Already checked in' });
 
@@ -130,6 +131,59 @@ exports.exportCSV = async (req, res) => {
         }));
         await csvWriter.writeRecords(data);
         res.download('attendance_export.csv');
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+exports.calendarSummary = async (req, res) => {
+    try {
+        const { month } = req.query; // YYYY-MM
+        if (!month) return res.json({});
+
+        const regex = new RegExp(`^${month}`);
+        const records = await Attendance.find({ date: regex });
+
+        const summary = {};
+
+        records.forEach((r) => {
+            if (!summary[r.date]) {
+                summary[r.date] = { present: 0, late: 0, absent: 0 };
+            }
+
+            if (r.status === "present") summary[r.date].present++;
+            if (r.status === "late") summary[r.date].late++;
+            if (r.status === "absent") summary[r.date].absent++;
+        });
+
+        res.json(summary);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+exports.getByDate = async (req, res) => {
+    try {
+        const { date } = req.query;
+        if (!date) return res.status(400).json({ message: "Date required" });
+
+        const records = await Attendance.find({ date })
+            .populate("userId", "name employeeId department");
+
+        res.json(records);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+exports.getAttendanceByDate = async (req, res) => {
+    try {
+        const date = req.params.date;
+
+        const records = await Attendance.find({ date })
+            .populate("userId", "name employeeId department");
+
+        res.json(records);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

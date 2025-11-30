@@ -7,6 +7,7 @@ import {
   Typography,
   Box,
   MenuItem,
+  Grid,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { register } from "../features/auth/authSlice";
@@ -23,78 +24,100 @@ export default function Register() {
   });
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const nav = useNavigate();
 
   const submit = async () => {
     try {
       const res = await dispatch(register(form)).unwrap();
-
-      if (res?.user?.role === "manager") navigate("/manager");
-      else navigate("/");
+      nav(res.user.role === "manager" ? "/manager" : "/");
     } catch (err) {
-      alert(err?.message || "Registration failed");
+      alert(err.message || "Registration failed");
     }
   };
 
   return (
-    <Container maxWidth="sm" sx={{ mt: 6 }}>
-      <Paper sx={{ p: 4 }}>
-        <Typography variant="h5" textAlign="center">
-          Register
+    <Container maxWidth="md" sx={{ mt: 8 }}>
+      <Paper elevation={4} sx={{ p: 4, borderRadius: 4 }}>
+        <Typography
+          variant="h4"
+          fontWeight={700}
+          textAlign="center"
+          sx={{ mb: 4 }}
+        >
+          Create Account ✨
         </Typography>
 
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 2 }}>
-          <TextField
-            label="Full Name"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            fullWidth
-          />
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <TextField
+              label="Full Name"
+              fullWidth
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+            />
+          </Grid>
 
-          <TextField
-            label="Email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            fullWidth
-          />
+          <Grid item xs={12} md={6}>
+            <TextField
+              label="Email"
+              fullWidth
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+            />
+          </Grid>
 
-          <TextField
-            label="Password"
-            type="password"
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-            fullWidth
-          />
+          <Grid item xs={12} md={6}>
+            <TextField
+              label="Password"
+              fullWidth
+              type="password"
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+            />
+          </Grid>
 
-          <TextField
-            label="Employee ID"
-            value={form.employeeId}
-            onChange={(e) => setForm({ ...form, employeeId: e.target.value })}
-            fullWidth
-          />
+          <Grid item xs={12} md={6}>
+            <TextField
+              label="Employee ID"
+              fullWidth
+              value={form.employeeId}
+              onChange={(e) => setForm({ ...form, employeeId: e.target.value })}
+            />
+          </Grid>
 
-          <TextField
-            label="Department"
-            value={form.department}
-            onChange={(e) => setForm({ ...form, department: e.target.value })}
-            fullWidth
-          />
+          <Grid item xs={12} md={6}>
+            <TextField
+              label="Department"
+              fullWidth
+              value={form.department}
+              onChange={(e) => setForm({ ...form, department: e.target.value })}
+            />
+          </Grid>
 
-          <TextField
-            select
-            label="Role"
-            value={form.role}
-            onChange={(e) => setForm({ ...form, role: e.target.value })}
-            fullWidth
-          >
-            <MenuItem value="employee">Employee</MenuItem>
-            <MenuItem value="manager">Manager</MenuItem>
-          </TextField>
+          <Grid item xs={12} md={6}>
+            <TextField
+              select
+              label="Role"
+              fullWidth
+              value={form.role}
+              onChange={(e) => setForm({ ...form, role: e.target.value })}
+            >
+              <MenuItem value="employee">Employee</MenuItem>
+              <MenuItem value="manager">Manager</MenuItem>
+            </TextField>
+          </Grid>
 
-          <Button variant="contained" fullWidth onClick={submit}>
-            Register
-          </Button>
-        </Box>
+          <Grid item xs={12}>
+            <Button
+              variant="contained"
+              fullWidth
+              sx={{ py: 1.4, fontSize: "1rem", mt: 2 }}
+              onClick={submit}
+            >
+              Register
+            </Button>
+          </Grid>
+        </Grid>
       </Paper>
     </Container>
   );
