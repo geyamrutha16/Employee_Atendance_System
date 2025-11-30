@@ -41,23 +41,7 @@ A fully featured Employee & Manager Attendance Management System built using the
 🔑 JWT Authentication
 🔐 bcrypt.js
 
-📂 Project Structure
-attendance-app/
-│
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── seed/
-│   └── server.js
-│
-└── frontend/
-    ├── src/
-    ├── pages/
-    ├── components/
-    └── vite.config.js
+<img width="111" height="214" alt="image" src="https://github.com/user-attachments/assets/4a31827a-2712-49eb-8842-13ad146adcb6" />
 
 ⚙️ Setup Instructions (Local Development)
 1️⃣ Clone the Repository
