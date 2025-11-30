@@ -6,13 +6,25 @@ const cors = require('cors');
 const morgan = require('morgan');
 dotenv.config();
 
-const app = express();
+const allowedOrigins = [
+    "http://localhost:5173",                  // local frontend (Vite)
+    "http://localhost:3000",                  // optional
+    process.env.CORS_ORIGIN,                  // Render frontend URL
+];
+
 app.use(
     cors({
-        origin: process.env.CORS_ORIGIN,
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("CORS blocked: " + origin));
+            }
+        },
         credentials: true,
     })
 );
+
 app.use(express.json());
 app.use(morgan('dev'));
 
