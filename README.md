@@ -1,143 +1,213 @@
-🌟 Employee Attendance System — MERN Stack
+<h1 align="center">🌟 Employee Attendance System — MERN Stack</h1>
 
-A fully featured Employee & Manager Attendance Management System built using the MERN stack, offering secure authentication, role-based dashboards, calendar views, attendance analytics, and CSV reporting.
+<p align="center">
+A fully featured <b>Employee & Manager Attendance Management System</b> built using the <b>MERN stack</b>, offering secure authentication, analytics, dashboards, calendars, and CSV reporting.
+</p>
 
-🚀 Features
+<hr/>
 
-👨‍💼 Employee Features
-🔐 Register & Login
-🕒 Mark Attendance (Check-In / Check-Out)
-📅 Daily + Monthly Summary
-📘 Attendance History (Table + Calendar)
-👤 Profile Page
-📊 Interactive Dashboard
+<h2>🚀 Features</h2>
 
-🧑‍💼 Manager Features
+<h3>👨‍💼 Employee Features</h3>
+<ul>
+  <li>🔐 Register & Login</li>
+  <li>🕒 Mark Attendance (Check-In / Check-Out)</li>
+  <li>📅 Daily + Monthly Summary</li>
+  <li>📘 Attendance History (Table + Calendar)</li>
+  <li>👤 Profile Page</li>
+  <li>📊 Interactive Dashboard</li>
+</ul>
 
-🔐 Manager Login
-📊 Dashboard with Team Statistics
-👥 View All Employees Attendance
-🔍 Filters: Date, Employee ID, Status
-🏢 Department-wise Summary Chart
-📈 Attendance Trend Line Graph
-📅 Team Calendar View (Day-wise detailed attendance)
-📤 Export Attendance Reports (CSV)
+<h3>🧑‍💼 Manager Features</h3>
+<ul>
+  <li>🔐 Manager Login</li>
+  <li>📊 Dashboard with Team Statistics</li>
+  <li>👥 View All Employees Attendance</li>
+  <li>🔍 Filters: Date, Employee ID, Status</li>
+  <li>🏢 Department-wise Summary Chart</li>
+  <li>📈 Attendance Trend Line Graph</li>
+  <li>📅 Team Calendar View</li>
+  <li>📤 Export Attendance Reports (CSV)</li>
+</ul>
 
-🏗️ Tech Stack
+<hr/>
 
-🎨 Frontend
+<h2>🏗️ Tech Stack</h2>
 
-⚛️ React
-🧰 Redux Toolkit
-⚡ Vite
-🎨 Material UI (MUI)
-📅 FullCalendar
+<h3>🎨 Frontend</h3>
+<ul>
+  <li>⚛️ React</li>
+  <li>🧰 Redux Toolkit</li>
+  <li>⚡ Vite</li>
+  <li>🎨 Material UI (MUI)</li>
+  <li>📅 FullCalendar</li>
+</ul>
 
-🖥️ Backend
+<h3>🖥 Backend</h3>
+<ul>
+  <li>🟢 Node.js</li>
+  <li>🚏 Express.js</li>
+  <li>🍃 MongoDB + Mongoose</li>
+  <li>🔐 JWT Authentication</li>
+  <li>🔑 bcrypt.js</li>
+</ul>
 
-🟢 Node.js
-🚏 Express.js
-🍃 MongoDB + Mongoose
-🔑 JWT Authentication
-🔐 bcrypt.js
+<hr/>
 
-<img width="111" height="214" alt="image" src="https://github.com/user-attachments/assets/4a31827a-2712-49eb-8842-13ad146adcb6" />
+<h2>📂 Project Structure</h2>
 
-⚙️ Setup Instructions (Local Development)
-1️⃣ Clone the Repository
+<pre>
+attendance-app/
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── seed/
+│   └── server.js
+│
+└── frontend/
+    ├── src/
+    ├── pages/
+    ├── components/
+    └── vite.config.js
+</pre>
+
+<hr/>
+
+<h2>⚙️ Setup Instructions (Local Development)</h2>
+
+<h3>1️⃣ Clone the Repository</h3>
+<pre>
 git clone https://github.com/yourusername/attendance-app.git
 cd attendance-app
+</pre>
 
-🗄️ Backend Setup
-2️⃣ Navigate to backend
-cd backend
+<h2>🗄 Backend Setup</h2>
 
-3️⃣ Install dependencies
-npm install
+<h3>2️⃣ Navigate to backend</h3>
+<pre>cd backend</pre>
 
-4️⃣ Create .env
+<h3>3️⃣ Install dependencies</h3>
+<pre>npm install</pre>
+
+<h3>4️⃣ Create .env</h3>
+<pre>
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 CORS_ORIGIN=http://localhost:5173
+</pre>
 
-5️⃣ (Optional) Seed sample users & attendance
-node seed/seed.js
+<h3>5️⃣ (Optional) Seed sample users</h3>
+<pre>node seed/seed.js</pre>
 
-6️⃣ Start backend server
-npm start
+<h3>6️⃣ Start backend</h3>
+<pre>npm start</pre>
 
+<p>Backend runs at → <b>http://localhost:5000</b></p>
 
-Backend runs at → http://localhost:5000
+<hr/>
 
-🎨 Frontend Setup
-7️⃣ Navigate to frontend
-cd ../frontend
+<h2>🎨 Frontend Setup</h2>
 
-8️⃣ Install dependencies
-npm install
+<h3>7️⃣ Navigate to frontend</h3>
+<pre>cd ../frontend</pre>
 
-9️⃣ Start frontend
-npm run dev
+<h3>8️⃣ Install dependencies</h3>
+<pre>npm install</pre>
 
+<h3>9️⃣ Start frontend</h3>
+<pre>npm run dev</pre>
 
-Frontend runs at → http://localhost:5173
+<p>Frontend runs at → <b>http://localhost:5173</b></p>
 
-🌍 Environment Variables
-🔧 Backend .env
+<hr/>
+
+<h2>🌍 Environment Variables</h2>
+
+<h3>🔧 Backend .env</h3>
+<pre>
 PORT=5000
 MONGO_URI=your_mongodb_url
 JWT_SECRET=long_random_secret
 CORS_ORIGIN=http://localhost:5173
+</pre>
 
-🎨 Frontend .env
+<h3>🎨 Frontend .env</h3>
+<pre>
 VITE_API_URL=https://your-backend-url.onrender.com/api
+</pre>
 
-📸 Screenshots
+<hr/>
 
-🔐 Login Page
-<img width="960" src="https://github.com/user-attachments/assets/b506e615-ebf4-4d4e-9118-9fd3ca17eac0">
-👨‍💼 Employee Dashboard
-<img width="960" src="https://github.com/user-attachments/assets/ce81e307-1ebb-4d2a-b2ca-fbcd18768b8e">
-🧑‍💼 Manager Dashboard (Add screenshot)
-📅 Team Calendar View (Add screenshot)
+<h2>📸 Screenshots</h2>
 
-📝 API Endpoints Overview
+<h3>🔐 Login Page</h3>
+<img width="960" height="472" alt="image" src="https://github.com/user-attachments/assets/0c2d269e-5b2e-4c4a-bd65-bd449fad15e8" />
 
-🔐 AUTH
-Method	Endpoint	Description
-POST	/api/auth/register	Register User
-POST	/api/auth/login	Login
-GET	/api/auth/me	Get Logged-in User
+<h3>👨‍💼 Employee Dashboard</h3>
+<img width="960" src="https://github.com/user-attachments/assets/ce81e307-1ebb-4d2a-b2ca-fbcd18768b8e"/>
 
-👨‍💼 Employee Attendance
-Method	Endpoint	Description
-POST	/api/attendance/checkin	Check In
-POST	/api/attendance/checkout	Check Out
-GET	/api/attendance/my-history	My Attendance History
-GET	/api/attendance/my-summary	Monthly Summary
+<h3>🧑‍💼 Manager Dashboard</h3>
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/9f1eefb0-7cf6-45dd-addf-be7540888cde" />
 
-🧑‍💼 Manager Attendance
-Method	Endpoint	Description
-GET	/api/attendance/all	All Employees Attendance
-GET	/api/attendance/export	Export CSV
-GET	/api/attendance/by-date/:date	Attendance by Date
-GET	/api/attendance/calendar-summary	Month Summary
+<h3>📅 Team Calendar</h3>
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/0a0a5e75-1a8e-4005-8765-43d518ecfaca" />
 
-🔧 Seed Data Info
+<hr/>
 
-👥 6 Employees (EMP001–EMP007)
-🧑‍💼 3 Managers
-🗓️ 7 days sample attendance
+<h2>📝 API Endpoints Overview</h2>
 
-🙌 Author
+<h3>🔐 AUTH</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+<tr><td>POST</td><td>/api/auth/register</td><td>Register User</td></tr>
+<tr><td>POST</td><td>/api/auth/login</td><td>Login</td></tr>
+<tr><td>GET</td><td>/api/auth/me</td><td>Get Logged-in User</td></tr>
+</table>
 
-POLURU GEYAMRUTHA
-Full-stack Developer
-📧 Email: geyamruthapoluru@gmail.com
+<h3>👨‍💼 Employee Attendance</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+<tr><td>POST</td><td>/api/attendance/checkin</td><td>Check In</td></tr>
+<tr><td>POST</td><td>/api/attendance/checkout</td><td>Check Out</td></tr>
+<tr><td>GET</td><td>/api/attendance/my-history</td><td>My Attendance History</td></tr>
+<tr><td>GET</td><td>/api/attendance/my-summary</td><td>Monthly Summary</td></tr>
+</table>
 
-🌐 Portfolio: https://geyamrutha-lookbook.onrender.com
+<h3>🧑‍💼 Manager Attendance</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+<tr><td>GET</td><td>/api/attendance/all</td><td>All Employees Attendance</td></tr>
+<tr><td>GET</td><td>/api/attendance/export</td><td>Export CSV</td></tr>
+<tr><td>GET</td><td>/api/attendance/by-date/:date</td><td>Attendance by Date</td></tr>
+<tr><td>GET</td><td>/api/attendance/calendar-summary</td><td>Monthly Summary</td></tr>
+</table>
 
-🔗 LinkedIn: https://www.linkedin.com/in/geyamrutha-poluru
+<hr/>
 
-💻 GitHub: https://github.com/geyamrutha16
+<h2>🔧 Seed Data Info</h2>
+<ul>
+  <li>👥 6 Employees (EMP001–EMP007)</li>
+  <li>🧑‍💼 3 Managers</li>
+  <li>🗓️ 7 days sample attendance</li>
+</ul>
+
+<hr/>
+
+<h2>🙌 Author</h2>
+
+<b>POLURU GEYAMRUTHA</b>  
+<br/>Full-stack Developer  
+
+<p>College Name : Narayana Engineering College, Gudur</p>
+
+<p>
+📧 Email: <a href="mailto:geyamruthapoluru@gmail.com">geyamruthapoluru@gmail.com</a><br/>
+🌐 Portfolio: <a href="https://geyamrutha-lookbook.onrender.com">https://geyamrutha-lookbook.onrender.com</a><br/>
+🔗 LinkedIn: <a href="https://www.linkedin.com/in/geyamrutha-poluru">linkedin.com/in/geyamrutha-poluru</a><br/>
+💻 GitHub: <a href="https://github.com/geyamrutha16">github.com/geyamrutha16</a>
+</p>
